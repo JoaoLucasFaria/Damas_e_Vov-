@@ -15,8 +15,8 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     
-    bruteforce(fp, max_capturas);
-    
+    backtracking(fp, max_capturas);
+
     fclose(fp);
     return 0;
 }

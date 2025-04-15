@@ -12,6 +12,6 @@
 #define MAX_N 20
 #define MAX_M 20
 
-#include "bruteforce.h"
+#include "backtracking.h"
 
 #endif // TP_H

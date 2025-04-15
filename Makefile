@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-I.
-DEPS = tp.h bruteforce.h
-OBJ = main.o bruteforce.o
+DEPS = tp.h backtracking.h
+OBJ = main.o backtracking.o
 EXEC = tp
 
 %.o: %.c $(DEPS)
