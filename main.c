@@ -15,6 +15,9 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    struct rusage uso_inicio, uso_fim;
+    getrusage(RUSAGE_SELF, &uso_inicio);
+
     if (strcmp(argv[2], "backtracking") == 0) {
         backtracking(fp);
     } else if (strcmp(argv[2], "bruteforce") == 0) {
@@ -22,6 +25,9 @@ int main(int argc, char *argv[]) {
     } else {
         fprintf(stderr, "Estrategia invalida: %s\n", argv[2]);
     }
+
+    getrusage(RUSAGE_SELF, &uso_fim);
+    imprimir_tempos(&uso_inicio, &uso_fim);
 
     fclose(fp);
     return 0;
