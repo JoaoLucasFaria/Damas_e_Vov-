@@ -19,5 +19,6 @@ extern int dy[4];
 
 int dentro_limites(int x, int y);
 void copiar_tabuleiro(int dest[MAX_N][MAX_M], int src[MAX_N][MAX_M]);
+void imprimir_tempos(struct rusage *inicio, struct rusage *fim);
 
 #endif // TP_H
