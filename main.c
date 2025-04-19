@@ -15,13 +15,20 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    FILE *out = fopen("out.txt", "w");
+    if (!out) {
+        perror("Erro ao criar arquivo de saída");
+        fclose(fp);
+        return 1;
+    }
+
     struct rusage uso_inicio, uso_fim;
     getrusage(RUSAGE_SELF, &uso_inicio);
 
     if (strcmp(argv[2], "backtracking") == 0) {
-        backtracking(fp);
+        backtracking(fp, out);
     } else if (strcmp(argv[2], "bruteforce") == 0) {
-        bruteforce(fp);
+        bruteforce(fp, out);
     } else {
         fprintf(stderr, "Estrategia invalida: %s\n", argv[2]);
     }
@@ -30,5 +37,6 @@ int main(int argc, char *argv[]) {
     imprimir_tempos(&uso_inicio, &uso_fim);
 
     fclose(fp);
+    fclose(out);
     return 0;
 }
