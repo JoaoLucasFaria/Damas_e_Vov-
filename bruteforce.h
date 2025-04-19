@@ -3,6 +3,6 @@
 
 #include "tp.h"
 
-int bruteforce(FILE *fp);
+int bruteforce(FILE *fp, FILE *out);
 
-#endif // BRUTEFORCE_H
+#endif // BRUTEFORCE
