@@ -15,7 +15,6 @@ void copiar_tabuleiro(int dest[MAX_N][MAX_M], int src[MAX_N][MAX_M]) {
             dest[i][j] = src[i][j];
 }
 
-
 void imprimir_tempos(struct rusage *inicio, struct rusage *fim) {
     long segundos_usuario = fim->ru_utime.tv_sec - inicio->ru_utime.tv_sec;
     long microssegundos_usuario = fim->ru_utime.tv_usec - inicio->ru_utime.tv_usec;
