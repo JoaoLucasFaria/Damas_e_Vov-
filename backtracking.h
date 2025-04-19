@@ -3,6 +3,6 @@
 
 #include "tp.h"
 
-int backtracking(FILE *fp);
+int backtracking(FILE *fp, FILE *out);
 
 #endif // BACKTRACKING_H
