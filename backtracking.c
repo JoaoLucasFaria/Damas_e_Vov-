@@ -2,6 +2,15 @@
 
 int melhor_solucao = 0;
 
+int contar_inimigos(int **tab) {
+    int count = 0;
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < M; j++)
+            if (tab[i][j] == 2)
+                count++;
+    return count;
+}
+
 void capturar_backtracking(int **tab, int x, int y, int capturas_atuais)
 {
     int captura_feita = 0;
@@ -21,7 +30,10 @@ void capturar_backtracking(int **tab, int x, int y, int capturas_atuais)
             tab[nx][ny] = 0;
             tab[nx2][ny2] = 1;
 
-            capturar_backtracking(tab, nx2, ny2, capturas_atuais + 1);
+            int restantes = contar_inimigos(tab);
+            if (capturas_atuais + 1 + restantes > melhor_solucao) {
+                capturar_backtracking(tab, nx2, ny2, capturas_atuais + 1);
+            }
 
             tab[x][y] = 1;
             tab[nx][ny] = 2;
@@ -39,6 +51,11 @@ int backtracking(FILE *fp, FILE *out)
 {
     while (fscanf(fp, "%d %d", &N, &M) == 2 && (N != 0 || M != 0))
     {
+        if (N<3 || N > 20 || M < 3 || M >20 || N * M > 200){
+            fprintf(out, "Erro: valores de N ou M inválidos (N=%d, M=%d)\n", N, M);
+            return 1;
+        }
+        
         melhor_solucao = 0;
         tabuleiro = alocar_tabuleiro(N, M);
 
