@@ -40,6 +40,11 @@ int bruteforce(FILE *fp, FILE *out)
 {
     while (fscanf(fp, "%d %d", &N, &M) == 2 && (N != 0 || M != 0))
     {
+        if (N<3 || N > 20 || M < 3 || M >20 || N * M > 200){
+            fprintf(out, "Erro: valores de N ou M inválidos (N=%d, M=%d)\n", N, M);
+            return 1;
+        }
+
         tabuleiro = alocar_tabuleiro(N, M);
 
         for (int i = 0; i < N; i++)
