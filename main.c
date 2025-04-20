@@ -33,10 +33,10 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Estrategia invalida: %s\n", argv[2]);
     }
 
-    getrusage(RUSAGE_SELF, &uso_fim);
-    imprimir_tempos(&uso_inicio, &uso_fim);
-
     fclose(fp);
     fclose(out);
+    
+    getrusage(RUSAGE_SELF, &uso_fim);
+    imprimir_tempos(&uso_inicio, &uso_fim);
     return 0;
 }
