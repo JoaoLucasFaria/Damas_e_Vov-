@@ -13,12 +13,14 @@
 #define MAX_M 20
 
 extern int N, M;
-extern int tabuleiro[MAX_N][MAX_M];
+extern int **tabuleiro;
 extern int dx[4];
 extern int dy[4];
 
 int dentro_limites(int x, int y);
-void copiar_tabuleiro(int dest[MAX_N][MAX_M], int src[MAX_N][MAX_M]);
+void copiar_tabuleiro(int **dest, int **src, int linhas, int colunas);
+int **alocar_tabuleiro(int linhas, int colunas);
+void liberar_tabuleiro(int **tab, int linhas);
 void imprimir_tempos(struct rusage *inicio, struct rusage *fim);
 
-#endif // TP_H
+#endif // TP
