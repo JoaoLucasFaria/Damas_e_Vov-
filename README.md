@@ -15,7 +15,7 @@ mais próxima ao jogador à borda mais próxima ao seu oponente. Na descrição 
 representa uma casa vazia, 1 representa uma casa com uma de suas peças, e 2 representa uma casa
 com uma peça de seu oponente. Há no máximo (N × M)/4 peças de cada jogador no tabuleiro. O
 final da entrada é indicado por N = M = 0.
-Exemplo de entrada:</br>
+</br>Exemplo de entrada:</br>
 3 3</br>
 2 1 2 0 1</br>
 5 3</br>
