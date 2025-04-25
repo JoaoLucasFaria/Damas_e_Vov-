@@ -5,4 +5,4 @@
 
 int backtracking(FILE *fp, FILE *out);
 
-#endif // BACKTRACKING_H
+#endif // BACKTRACKING
