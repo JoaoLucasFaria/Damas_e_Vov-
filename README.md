@@ -4,7 +4,7 @@ O comando para a execução é:
 
     ./tp -i <entrada.txt> -o <1 para forca bruta|2 para backtracking> -s <saida.txt>
 
-O programa irá imprimir a maior quantidade de peças que podem ser "comidas" por tabuleiro no arquivo informado após "-s", separando por linha a resposta de cada tabuleiro informado.</br>
+O programa irá imprimir a maior quantidade de peças que podem ser "comidas" por tabuleiro no arquivo informado após "-i", separando por linha a resposta de cada tabuleiro informado.</br>
 
 A entrada contém vários casos de teste. A primeira linha de um caso de teste contém dois inteiros N e M indicando respectivamente o número de linhas e o número de colunas do tabuleiro
 (3 ≤ N ≤ 20, 3 ≤ M ≤ 20 e N × M ≤ 200). O quadrado mais à esquerda do tabuleiro na borda
